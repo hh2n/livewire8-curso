@@ -12,7 +12,7 @@
         <div class="bg-blue-900 py-1">
             <nav class="bg-blue-800 py-2">
                 <a href="{{route('home')}}">
-                    <img src="{{asset('images/isotipo-platzi.png')}}" class="h-8 mx-auto">
+                    <img src="{{asset('images/isotipo-platzi.png')}}" class="h-8 mx-auto" title="Home">
                 </a>
             </nav>
         </div>

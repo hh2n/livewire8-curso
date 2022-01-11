@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Posts;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +13,11 @@ class Courses extends Model
 
     public function user(){
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Posts::class);
     }
 
     public function getExcerptAttribute()
