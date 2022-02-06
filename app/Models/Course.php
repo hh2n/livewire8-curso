@@ -7,7 +7,7 @@ use App\Models\Posts;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Courses extends Model
+class Course extends Model
 {
     use HasFactory;
 
@@ -23,5 +23,9 @@ class Courses extends Model
     public function getExcerptAttribute()
     {
         return substr($this->description, 0, 80) . "...";
+    }
+
+    public function similar(){
+        return $this->where('category_id', $this->category_id)->with('user')->take(2)->get();
     }
 }

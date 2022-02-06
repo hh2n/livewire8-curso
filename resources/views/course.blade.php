@@ -9,8 +9,11 @@
                     Contenido
                 </li>
                 @foreach ($course->posts as $post)
-                <li>
+                <li class="flex items-center text-gray-600 mt-2">
                    {{$post->name}} 
+                   @if ($post->free)
+                        <span class="text-xs text-gray-500 font-semibold bg-gray-300 px-2 rounded-full ml-auto">Gratis</span>
+                   @endif
                 </li>
                 @endforeach
             </ul>
@@ -28,6 +31,11 @@
                     <p class="text-gray-500 text-sm">{{$course->user->name}}</p>
                     <p class="text-gray-400 text-xs">{{$course->created_at->diffforHumans()}}</p>
                 </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 my-8">
+                @foreach ($course->similar() as $course)
+                <x-course-card :course="$course" />
+                @endforeach
             </div>
         </div>
     </div>
