@@ -1,3 +1,11 @@
+{{-- Importando componente app/view/component -> AppLayout --}}
+<x-app-layout>
+
+<h1>Hola Mundo</h1>
+
+</x-app-layout>
+{{-- Importando componente app/view/component -> AppLayout --}}
+{{-- 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -130,3 +138,4 @@
         </div>
     </body>
 </html>
+ --}}

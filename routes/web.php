@@ -9,3 +9,5 @@ Route::get('curso/{course:slug}', [PageController::class, 'course'])->name('cour
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::view('contactos', 'welcome');
